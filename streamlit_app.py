@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
 
-url="https://ourworldindata.org/explorers/coronavirus-data-explorer?zoomToSelection=true&time=2020-03-01..latest&facet=none&pickerSort=desc&pickerMetric=new_cases_smoothed_per_million&Metric=Confirmed+cases&Interval=7-day+rolling+average&Relative+to+Population=true&Color+by+test+positivity=false&country=IND~USA~GBR~CAN~DEU~FRA"
+url="https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv"
 
 st.header("Exploratory Data Analysis ,Prediction and Timeseries forecasting of Omicron in India")
 st.write("-------")
