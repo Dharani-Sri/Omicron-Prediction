@@ -1,3 +1,8 @@
 plotly==5.7.0
 pystan==2.19.1.1
+seaborn==0.9.1
 scikit-image==0.18.3
+matplotlib
+numpy
+pandas
+streamlit
