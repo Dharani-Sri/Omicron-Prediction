@@ -109,11 +109,7 @@ def main():
         plt.xlabel("WeekNumber")
         plt.ylabel("Number of cases")
         plt.title("Weekly Progress of different types of cases")
-        st.pyplot()
-        st.subheader("Model Prediction Table")
-        model_predictions = prediction()       
-        model_predictions = pd.read_csv('file1.csv')
-        st.dataframe(model_predictions)
+        st.image('https://github.com/Joshmantova/Eagle-Vision/blob/prod/imgs/resnet50_architecture.jpg')
         
     if mode == "Timeseries Forecasting":
         country = "India"
