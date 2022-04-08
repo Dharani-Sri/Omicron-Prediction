@@ -90,13 +90,13 @@ def main():
             
     if mode == "Model Prediction":
         st.subheader("Prediction chart over week")
-        img=Image.open('https://github.com/Dharani-Sri/Omicron-Prediction/blob/main/img/prediction1.PNG')
+        img=Image.open('https://raw.github.com/Dharani-Sri/Omicron-Prediction/blob/main/img/prediction1.png')
         st.image(img)
-        img=Image.open('https://github.com/Dharani-Sri/Omicron-Prediction/blob/main/img/prediction2.PNG')
+        img=Image.open('https://raw.githubusercontent.com/Dharani-Sri/Omicron-Prediction/blob/main/img/prediction2.PNG')
         st.image(img)
         st.subheader("Model Prediction Table")
         model_predictions = prediction()       
-        model_predictions = pd.read_csv('https://github.com/Dharani-Sri/Omicron-Prediction/blob/main/src/file1.csv')
+        model_predictions = pd.read_csv('https://raw.githubusercontent.com/Dharani-Sri/Omicron-Prediction/main/src/file1.csv')
         st.dataframe(model_predictions)
         
     if mode == "Timeseries Forecasting":
