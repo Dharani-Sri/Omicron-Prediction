@@ -84,7 +84,9 @@ def main():
         st.write("It is necessary to work on collected data, pre-process them in order to obtain a consistent dataset and then extract the most relevant features. Here we can see the raw dataset....")
         if st.button("Load the dataset"):
             df = load_data()
-        st.dataframe(df)          
+            st.dataframe(df)
+        else:
+            st.warning("Oops! Something went wrong")
             
     if mode == "Model Prediction":
         st.subheader("Prediction chart over week")
