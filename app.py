@@ -92,6 +92,7 @@ def main():
             st.write("It is necessary to work on collected data, pre-process them in order to obtain a consistent dataset and then extract the most relevant features.")
             
     if mode == "Model Prediction":
+        india_data = prediction()
         india_data["WeekofYear"] = india_data.index.weekofyear
         week_num_india1 = []
         india_weekwise_confirmed1 = []
