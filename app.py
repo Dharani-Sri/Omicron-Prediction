@@ -4,7 +4,7 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
-from fbprophet import Prophet
+from prophet import Prophet
 import requests
 
 
