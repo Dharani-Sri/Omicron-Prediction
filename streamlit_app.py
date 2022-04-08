@@ -85,8 +85,7 @@ def main():
         if st.button("Load the dataset"):
             df = load_data()
             st.dataframe(df)
-        else:
-            st.warning("Oops! Something went wrong")
+            time.sleep(10)
             
     if mode == "Model Prediction":
         st.subheader("Prediction chart over week")
