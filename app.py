@@ -92,11 +92,23 @@ def main():
             st.write("It is necessary to work on collected data, pre-process them in order to obtain a consistent dataset and then extract the most relevant features.")
             
     if mode == "Model Prediction":
-        st.subheader("Prediction chart over week")
-        img=Image.open('prediction1.png')
-        st.image(img)
-        img=Image.open('prediction2.png')
-        st.image(img)
+        india_data["WeekofYear"] = india_data.index.weekofyear
+        week_num_india1 = []
+        india_weekwise_confirmed1 = []
+        india_weekwise_deaths1 = []
+        w = 1
+        for i in list(india_data["WeekofYear"].unique()):
+            india_weekwise_confirmed1.append(india_data[india_data["WeekofYear"]==i]["new_cases"].iloc[-1])
+            india_weekwise_deaths1.append(india_data[india_data["WeekofYear"]==i]["new_deaths"].iloc[-1])
+            week_num_india1.append(w)
+            w=w+1
+        plt.figure(figsize=(8,5))
+        plt.plot(week_num_india1,india_weekwise_confirmed1,linewidth=3)
+        plt.plot(week_num_india1,india_weekwise_deaths1,linewidth = 3)
+        plt.xlabel("WeekNumber")
+        plt.ylabel("Number of cases")
+        plt.title("Weekly Progress of different types of cases")
+        st.pyplot()
         st.subheader("Model Prediction Table")
         model_predictions = prediction()       
         model_predictions = pd.read_csv('file1.csv')
