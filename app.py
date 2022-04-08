@@ -90,7 +90,7 @@ def main():
             
     if mode == "Model Prediction":
         st.subheader("Prediction chart over week")
-        img=Image.open('https://raw.github.com/Dharani-Sri/Omicron-Prediction/blob/main/img/prediction1.png')
+        img=Image.open('https://github.com/Dharani-Sri/Omicron-Prediction/blob/main/img/prediction1.png')
         st.image(img)
         img=Image.open('https://raw.githubusercontent.com/Dharani-Sri/Omicron-Prediction/blob/main/img/prediction2.PNG')
         st.image(img)
