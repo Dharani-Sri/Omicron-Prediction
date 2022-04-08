@@ -92,7 +92,7 @@ def main():
         st.subheader("Prediction chart over week")
         img=Image.open('img/prediction1.PNG')
         st.image(img)
-        img=Image.open('https://raw.githubusercontent.com/Dharani-Sri/Omicron-Prediction/blob/main/img/prediction2.PNG')
+        img=Image.open('img/prediction2.PNG')
         st.image(img)
         st.subheader("Model Prediction Table")
         model_predictions = prediction()       
@@ -104,7 +104,7 @@ def main():
         filter_case = 'new_cases' 
         st.subheader("Timeseries Graph")
         st.write('Prophet is a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects.Here we can see the predictions made by the Prophet model.')
-        st.markdown("![Alt Text](https://github.com/mitch-parker/rascore/blob/main/src/rascore/util/data/rascore_logo.png)") 
+        st.image('img/forecast.PNG')
         df = df[df['location']==country]
         df.rename(columns={"date": "ds", filter_case: "y"},inplace=True) 
         df['ds'] = pd.to_datetime(df['ds'],infer_datetime_format=True)
@@ -134,9 +134,9 @@ def main():
             plt.figure(figsize=(20,15))
             hm = sns.heatmap(omicron.corr(),annot=True)
             st.pyplot(hm.figure)
-
+            
         if choice == "Timestamp":
-            st.image('https://github.com/Dharani-Sri/Omicron-Prediction/blob/main/img/progress.PNG')
+            st.image("img/progress.PNG")
             
         if choice == "Chloropleth Maps":
             fig1 = cmap1()
