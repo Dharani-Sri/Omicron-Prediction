@@ -4,6 +4,8 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
+import requests
+
 
 url="https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv"
 
@@ -104,7 +106,8 @@ def main():
         filter_case = 'new_cases' 
         st.subheader("Timeseries Graph")
         st.write('Prophet is a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects.Here we can see the predictions made by the Prophet model.')
-        img=Image.open('https://github.com/Dharani-Sri/Omicron-Prediction/blob/main/forecast.png')
+        url1="https://github.com/Dharani-Sri/Omicron-Prediction/blob/main/forecast.png"
+        img = Image.open(requests.get(url1, stream=True).raw)
         st.image(img)
         df = df[df['location']==country]
         df.rename(columns={"date": "ds", filter_case: "y"},inplace=True) 
