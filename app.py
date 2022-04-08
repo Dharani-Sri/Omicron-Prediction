@@ -96,7 +96,7 @@ def main():
         st.image(img)
         st.subheader("Model Prediction Table")
         model_predictions = prediction()       
-        model_predictions = pd.read_csv('img/file1.csv')
+        model_predictions = pd.read_csv('https://github.com/Dharani-Sri/Omicron-Prediction/blob/main/src/file1.csv')
         st.dataframe(model_predictions)
         
     if mode == "Timeseries Forecasting":
