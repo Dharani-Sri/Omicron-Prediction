@@ -4,7 +4,6 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
-import time
 
 url="https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv"
 
@@ -82,7 +81,7 @@ def main():
         st.subheader("Let us explore the dataset")
         st.write("It is necessary to work on collected data, pre-process them in order to obtain a consistent dataset and then extract the most relevant features. Here we can see the raw dataset....")
         if st.button("Load the Dataset"):
-            df = load_data()
+            df = pd.read_csv(url)
             df = df.drop(["iso_code","continent"],1,inplace=True)
             st.dataframe(df)
             
