@@ -11,7 +11,7 @@ st.header("Exploratory Data Analysis ,Prediction and Timeseries forecasting of O
 st.write("-------")
 
 sidebar_options =  ["Introduction","Dataset","Visualization","Model Prediction","Timeseries Forecasting"]    
-radio_options = ["Daily Cases","Correlation","Timestamp","Chloropleth Maps"]
+radio_options = ["Daily Cases","Correlation","Timestamp","Chloropleth"]
     
 def load_data():
     df=pd.read_csv(url)
@@ -136,9 +136,10 @@ def main():
             st.pyplot(hm.figure)
             
         if choice == "Timestamp":
+            st.subheader("Daily progress of New Cases")
             st.image("img/progress.PNG")
             
-        if choice == "Chloropleth Maps":
+        if choice == "Chloropleth":
             fig1 = cmap1()
             st.plotly_chart(fig1)
             fig2 = cmap2()
