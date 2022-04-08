@@ -21,7 +21,6 @@ def load_data():
 def processing():
     df=pd.read_csv(url)
     df = df[df["location"]=="India"]
-    df.dropna()
     df.drop(["iso_code","continent" ],1,inplace=True)
     return df
     
