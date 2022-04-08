@@ -82,7 +82,7 @@ def main():
     if mode == "Dataset":
         st.subheader("Let us explore the dataset")
     
-         if st.button("Load the dataset"):
+        if st.button("Load the dataset"):
             df = load_data()
             st.dataframe(df)  
             st.write("It is necessary to work on collected data, pre-process them in order to obtain a consistent dataset and then extract the most relevant features.")
