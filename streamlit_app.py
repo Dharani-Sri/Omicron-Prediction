@@ -12,7 +12,8 @@ st.write("-------")
 
 sidebar_options =  ["Introduction","Dataset","Visualization","Model Prediction","Timeseries Forecasting"]    
 radio_options = ["Daily Cases","Correlation","Timestamp","Chloropleth"]
-    
+
+@st.cache
 def load_data():
     df=pd.read_csv(url)
     df.drop(["iso_code","continent" ],1,inplace=True)
