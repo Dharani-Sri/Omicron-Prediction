@@ -16,7 +16,6 @@ radio_options = ["Daily Cases","Correlation","Timestamp","Chloropleth"]
 
 def load_data():
     df=pd.read_csv(url)
-    df.drop(["iso_code","continent" ],1,inplace=True)
     return df
 
 def processing():
@@ -78,13 +77,13 @@ def main():
         st.write("On November 26, 2021, the World Health Organization (WHO) classified a new variant, B.1.1.529, as a Variant of Concern and named it Omicron and on November 30, 2021, the United States also classified it as a Variant of Covid.\nCenters for Disease Control and Prevention is working with state and local public health officials to monitor the spread of Omicron. As of December 20, 2021, Omicron had been detected in every U.S. state and territory and continues to be the dominant variant in the United States.")    
         st.write("The Omicron variant spreads more easily than earlier variants of the virus that cause COVID-19, including the Delta variant. CDC expects that anyone with Omicron infection, regardless of vaccination status or whether or not they have symptoms, can spread the virus to others.")
         st.write("**Our goal is to understand the outbreak of OMICRON in India using Machine Learning Techniques.**" )
-    
-        
+          
     if mode == "Dataset":
         st.subheader("Let us explore the dataset")
         st.write("It is necessary to work on collected data, pre-process them in order to obtain a consistent dataset and then extract the most relevant features. Here we can see the raw dataset....")
-        if st.sidebar.button("Load the Dataset"):
-            df = pd.read_csv(url)
+        if st.button("Load the Dataset"):
+            df = load_data()
+            df = df.drop(["iso_code","continent"],1,inplace=True)
             st.dataframe(df)
             
     if mode == "Model Prediction":
