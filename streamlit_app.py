@@ -13,7 +13,6 @@ st.write("-------")
 sidebar_options =  ["Introduction","Dataset","Visualization","Model Prediction","Timeseries Forecasting"]    
 radio_options = ["Daily Cases","Correlation","Timestamp","Chloropleth"]
 
-@st.cache
 def load_data():
     df=pd.read_csv(url)
     df.drop(["iso_code","continent" ],1,inplace=True)
@@ -83,9 +82,9 @@ def main():
     if mode == "Dataset":
         st.subheader("Let us explore the dataset")
         st.write("It is necessary to work on collected data, pre-process them in order to obtain a consistent dataset and then extract the most relevant features. Here we can see the raw dataset....")
-        if st.button("Load th dataset"):
+        if st.button("Load the dataset"):
             df = load_data()
-            st.dataframe(df)          
+        st.dataframe(df)          
             
     if mode == "Model Prediction":
         st.subheader("Prediction chart over week")
