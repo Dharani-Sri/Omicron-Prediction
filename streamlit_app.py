@@ -7,7 +7,7 @@ from PIL import Image
 
 url="https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv"
 
-st.header("Exploratory Data Analysis ,Prediction and Timeseries forecasting of Omicron in India")
+st.header("Exploratory Data Analysis, Prediction and Timeseries forecasting of Omicron in India")
 st.write("-------")
 
 sidebar_options =  ["Introduction","Dataset","Visualization","Model Prediction","Timeseries Forecasting"]    
@@ -82,10 +82,10 @@ def main():
         
     if mode == "Dataset":
         st.subheader("Let us explore the dataset")
+        st.write("It is necessary to work on collected data, pre-process them in order to obtain a consistent dataset and then extract the most relevant features.Here is the raw dataset.")
         if st.button("Load th dataset"):
             df = load_data()
-            st.dataframe(df)  
-        st.write("It is necessary to work on collected data, pre-process them in order to obtain a consistent dataset and then extract the most relevant features.")
+            st.dataframe(df)          
             
     if mode == "Model Prediction":
         st.subheader("Prediction chart over week")
