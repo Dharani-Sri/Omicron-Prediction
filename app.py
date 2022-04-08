@@ -4,6 +4,7 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
+from fbprophet import Prophet
 import requests
 
 
@@ -106,15 +107,17 @@ def main():
         filter_case = 'new_cases' 
         st.subheader("Timeseries Graph")
         st.write('Prophet is a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects.Here we can see the predictions made by the Prophet model.')
-        url1="https://github.com/Dharani-Sri/Omicron-Prediction/blob/main/forecast.png"
-        img = Image.open(requests.get(url1, stream=True).raw)
-        st.image(img)
         df = df[df['location']==country]
         df.rename(columns={"date": "ds", filter_case: "y"},inplace=True) 
         df['ds'] = pd.to_datetime(df['ds'],infer_datetime_format=True)
         df = df[df['ds']>"2020-12-12"]
         df['y'] = df['y'].astype(float)
         df = df[['y','ds']]
+        pred = Prophet()
+        pred.fit(df)
+        future = pred.make_future_dataframe(periods=365)
+        forecast = pred.predict(future)
+        st.pyplot(forecast)
         
     if mode == "Visualization":
         choice = st.sidebar.radio("Choose your charts",radio_options)        
