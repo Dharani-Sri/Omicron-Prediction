@@ -15,7 +15,6 @@ radio_options = ["Daily Cases","Correlation","Timestamp","Chloropleth"]
 
 def load_data():
     df=pd.read_csv(url)
-    df = df[df["location"]=="India"]
     df.drop(["iso_code","continent" ],1,inplace=True)
     return df
 
