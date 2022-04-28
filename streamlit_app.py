@@ -25,7 +25,7 @@ def processing():
     return df
     
 def cmap1():
-    statewise = pd.read_csv("https://raw.githubusercontent.com/Dharani-Sri/Omicron-Prediction/main/src/statewise_cases.csv")
+    statewise = pd.read_csv("https://raw.githubusercontent.com/Dharani-Sri/Omicron-Prediction/main/src/omicron active_cases,confirmed_cases.csv")
     fig = px.choropleth_mapbox(statewise,
     geojson="https://gist.githubusercontent.com/jbrobst/56c13bbbf9d97d187fea01ca62ea5112/raw/e388c4cae20aa53cb5090210a42ebb9b765c0a36/india_states.geojson",
     featureidkey='properties.ST_NM',
@@ -42,7 +42,7 @@ def cmap1():
     return fig
 
 def cmap2():
-    statewise = pd.read_csv("https://raw.githubusercontent.com/Dharani-Sri/Omicron-Prediction/main/src/statewise_cases.csv")
+    statewise = pd.read_csv("https://raw.githubusercontent.com/Dharani-Sri/Omicron-Prediction/main/src/omicron active_cases,confirmed_cases..csv")
     fig = px.choropleth_mapbox(statewise,
     geojson="https://gist.githubusercontent.com/jbrobst/56c13bbbf9d97d187fea01ca62ea5112/raw/e388c4cae20aa53cb5090210a42ebb9b765c0a36/india_states.geojson",
     featureidkey='properties.ST_NM',
