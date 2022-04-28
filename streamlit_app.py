@@ -121,9 +121,13 @@ def main():
         if choice == "Daily Cases":
             st.subheader("Here we see the Intractive visualization of past Data")
             st.write("Data Visualization is the first step towards getting an insight into a large data set in every project. Once the data has been acquired and preprocessed , the next step is Exploratory Data Analysis which kicks off with visualization of the data. The aim here is to extract useful information from the data.")
-            fig1 = px.line(omicron,x='date',y='total_cases',title='Daily Confirmed Omicron Cases')
+            fig1 = px.line(omicron,x='date',y='total_cases',title='Total Confirmed new Cases')
             st.plotly_chart(fig1)
-            fig2 = px.line(omicron,x='date',y='total_deaths',title='Daily Confirmed death Cases',color_discrete_sequence = ["red"])
+            fig1 = px.scatter(omicron,x='date',y='new_cases',title='Daily Confirmed new Cases')
+            st.plotly_chart(fig1)
+            fig2 = px.line(omicron,x='date',y='total_deaths',title='Total Confirmed death Cases',color_discrete_sequence = ["red"])
+            st.plotly_chart(fig2)
+            fig2 = px.line(omicron,x='date',y='new_deaths',title='Daily Confirmed death Cases',color_discrete_sequence = ["red"])
             st.plotly_chart(fig2)
            
         if choice == "Correlation":
