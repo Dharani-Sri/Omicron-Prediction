@@ -101,7 +101,9 @@ def main():
         filter_case = 'new_cases' 
         st.subheader("Timeseries Graph")
         st.write('Prophet is a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects.Here we can see the predictions made by the Prophet model.')
+        st.caption("Predcited new cases")
         st.image('img/fb new cases.PNG')
+        st.caption("Predcited death cases")
         st.image('img/fb death cases.PNG')
         df = df[df['location']==country]
         df.rename(columns={"date": "ds", filter_case: "y"},inplace=True) 
