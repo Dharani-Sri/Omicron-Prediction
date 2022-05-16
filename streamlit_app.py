@@ -11,7 +11,7 @@ st.header("Exploratory Data Analysis, Prediction and Timeseries forecasting of O
 st.write("-------")
 
 sidebar_options =  ["Introduction","Dataset","Visualization","Model Prediction","Timeseries Forecasting"]    
-radio_options = ["Confirmed Cases","Correlation","Timestamp","Chloropleth"]
+radio_options = ["Confirmed","Correlation","Timestamp","Chloropleth"]
 
 def load_data():
     df=pd.read_csv(url)
@@ -121,7 +121,7 @@ def main():
        'total_deaths_per_million', 'new_deaths_per_million']]
         
         
-        if choice == "Confirmed Cases":
+        if choice == "Confirmed":
             st.subheader("Here we see the Intractive visualization of past Data")
             st.write("Data Visualization is the first step towards getting an insight into a large data set in every project. Once the data has been acquired and preprocessed , the next step is Exploratory Data Analysis which kicks off with visualization of the data. The aim here is to extract useful information from the data.")
           
