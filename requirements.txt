@@ -5,3 +5,4 @@ seaborn==0.9.1
 streamlit==1.8.1
 matplotlib==3.5.1
 scikit-image==0.18.3
+pip==22.3.1
