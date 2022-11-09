@@ -60,6 +60,7 @@ def cmap2():
 def prediction():
     df = pd.read_csv(url)
     df = df[df['date']>"2021-12-12"]
+    df = df[df['date']<"2022-05-05"]
     df["date"] = pd.to_datetime(df["date"], utc=True)
     df.set_index('date', inplace=True)
     india_data = df[df["location"]=="India"]
@@ -116,6 +117,7 @@ def main():
         choice = st.sidebar.radio("Choose your charts",radio_options)        
         df=processing()
         df = df[df['date']>"2021-12-12"]
+        df = df[df['date']<"2022-05-05"]
         omicron = df[['location', 'date', 'total_cases', 'new_cases','new_cases_smoothed', 'total_deaths', 'new_deaths',
        'new_deaths_smoothed', 'total_cases_per_million','new_cases_per_million', 'new_cases_smoothed_per_million',
        'total_deaths_per_million', 'new_deaths_per_million']]
